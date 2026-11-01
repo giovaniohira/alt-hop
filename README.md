@@ -15,7 +15,7 @@ No passwords stored, no login automation, no game memory touched.
 
 [**Download**](https://github.com/giovaniohira/riot-switcher/releases/latest) · [How it works](#how-it-works) · [FAQ](#faq)
 
-<img src="docs/screenshots/accounts.png" alt="Account list with a main account, an active smurf and an expired session" width="820" />
+<img src="docs/images/accounts.png" alt="Account list with a main account, an active smurf and an expired session" width="820" />
 
 </div>
 
@@ -29,16 +29,16 @@ No passwords stored, no login automation, no game memory touched.
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/add.png" alt="Add account dialog showing the detected Riot ID" /></td>
-    <td><img src="docs/screenshots/configs.png" alt="Game configs dialog" /></td>
+    <td><img src="docs/images/add.png" alt="Add account dialog showing the detected Riot ID" /></td>
+    <td><img src="docs/images/configs.png" alt="Game configs dialog" /></td>
   </tr>
   <tr>
     <td align="center"><sub>Adding an account picks up the signed-in Riot ID</sub></td>
     <td align="center"><sub>Copy your main's game settings to alts</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/switching.png" alt="Switching to another account" /></td>
-    <td><img src="docs/screenshots/empty.png" alt="First run screen" /></td>
+    <td><img src="docs/images/switching.png" alt="Switching to another account" /></td>
+    <td><img src="docs/images/empty.png" alt="First run screen" /></td>
   </tr>
   <tr>
     <td align="center"><sub>Switching</sub></td>
@@ -146,7 +146,7 @@ cargo test --manifest-path src-tauri/Cargo.toml
 ```
 src/              frontend (vanilla HTML/CSS/JS)
 src-tauri/src/    Rust backend: session swap, config sync, JWT identity parsing
-docs/screenshots/ README images
+docs/images/      README images
 ```
 
 ## License
