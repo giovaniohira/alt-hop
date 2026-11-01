@@ -2,18 +2,18 @@
 
 <img src="src-tauri/icons/icon.svg" width="96" alt="" />
 
-# Riot Account Switcher
+# Alt Hop
 
 **Switch between Riot accounts in one click — Valorant, League of Legends or just the Riot Client.**
 No passwords stored, no login automation, no game memory touched.
 
-[![Release](https://img.shields.io/github/v/release/giovaniohira/riot-switcher?style=flat-square)](https://github.com/giovaniohira/riot-switcher/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/giovaniohira/riot-switcher/total?style=flat-square)](https://github.com/giovaniohira/riot-switcher/releases)
+[![Release](https://img.shields.io/github/v/release/giovaniohira/alt-hop?style=flat-square)](https://github.com/giovaniohira/alt-hop/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/giovaniohira/alt-hop/total?style=flat-square)](https://github.com/giovaniohira/alt-hop/releases)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D6?style=flat-square)
 ![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=flat-square)
-[![License](https://img.shields.io/github/license/giovaniohira/riot-switcher?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/github/license/giovaniohira/alt-hop?style=flat-square)](LICENSE)
 
-[**Download**](https://github.com/giovaniohira/riot-switcher/releases/latest) · [How it works](#how-it-works) · [FAQ](#faq)
+[**Download**](https://github.com/giovaniohira/alt-hop/releases/latest) · [How it works](#how-it-works) · [FAQ](#faq)
 
 <img src="docs/images/accounts.png" alt="Account list with a main account, an active smurf and an expired session" width="820" />
 
@@ -48,16 +48,16 @@ No passwords stored, no login automation, no game memory touched.
 
 ## Install
 
-1. Grab `RiotSwitcher_x.y.z_x64-setup.exe` from the [latest release](https://github.com/giovaniohira/riot-switcher/releases/latest).
+1. Grab `AltHop_x.y.z_x64-setup.exe` from the [latest release](https://github.com/giovaniohira/alt-hop/releases/latest).
 2. Run it. Windows SmartScreen may warn because the installer isn't code-signed — click **More info → Run anyway**.
-3. Open **RiotSwitcher** and accept the UAC prompt (see [why](#why-does-it-ask-for-administrator)).
+3. Open **Alt Hop** and accept the UAC prompt (see [why](#why-does-it-ask-for-administrator)).
 
 Requires Windows 10/11 with WebView2 (preinstalled on Windows 11; the installer fetches it on Windows 10 if missing).
 
 ## Usage
 
 1. Open the Riot Client and sign in with **Stay signed in** checked.
-2. In RiotSwitcher click **Add account**, give it a label, save.
+2. In Alt Hop click **Add account**, give it a label, save.
 3. For the next account click **Log in new** — Riot reopens on the login screen. Sign in (again with *Stay signed in*) and click **Add account**.
 4. From now on, click **Switch** on any account. Pick what opens after switching with the *Valorant / League / Riot Client* toggle.
 
@@ -71,7 +71,7 @@ The Riot Client keeps your "stay signed in" session in a single file:
 %LOCALAPPDATA%\Riot Games\Riot Client\Data\RiotGamesPrivateSettings.yaml
 ```
 
-RiotSwitcher copies that file per account when you add/recapture one, and on switch it:
+Alt Hop copies that file per account when you add/recapture one, and on switch it:
 
 1. saves the current file back over the departing account (Riot rotates tokens, so this keeps them fresh),
 2. closes every Riot/Valorant/League process,
@@ -80,7 +80,7 @@ RiotSwitcher copies that file per account when you add/recapture one, and on swi
 
 That's it — no password handling, no talking to Riot's auth servers, no injection. Game configs work the same way: whole-folder copies of `%LOCALAPPDATA%\VALORANT\Saved\Config` and `C:\Riot Games\League of Legends\Config`.
 
-App data lives in `%LOCALAPPDATA%\RiotSwitcher`:
+App data lives in `%LOCALAPPDATA%\AltHop`:
 
 | Path | What |
 |---|---|
@@ -93,16 +93,16 @@ App data lives in `%LOCALAPPDATA%\RiotSwitcher`:
 ## FAQ
 
 ### Can I get banned for using this?
-RiotSwitcher doesn't touch the game, its memory or its network traffic, and doesn't automate the login screen. It only copies a file the Riot Client itself writes, then starts the client normally — the same thing as logging in and out by hand. That said, this is an unofficial tool and it isn't endorsed by Riot; use it at your own risk.
+Alt Hop doesn't touch the game, its memory or its network traffic, and doesn't automate the login screen. It only copies a file the Riot Client itself writes, then starts the client normally — the same thing as logging in and out by hand. That said, this is an unofficial tool and it isn't endorsed by Riot; use it at your own risk.
 
 ### Does it store my password?
-No. You always type your password into the real Riot Client. RiotSwitcher only keeps a copy of the session file Riot creates after you log in.
+No. You always type your password into the real Riot Client. Alt Hop only keeps a copy of the session file Riot creates after you log in.
 
 ### Is it safe to keep these session files?
-Treat them like a password. Anyone who can read `%LOCALAPPDATA%\RiotSwitcher\sessions` on your PC can sign in as you until the session expires. They're stored as plain files, protected only by your Windows account. Don't use RiotSwitcher on a shared or public computer, and delete the folder if you stop using it.
+Treat them like a password. Anyone who can read `%LOCALAPPDATA%\AltHop\sessions` on your PC can sign in as you until the session expires. They're stored as plain files, protected only by your Windows account. Don't use Alt Hop on a shared or public computer, and delete the folder if you stop using it.
 
 ### Why does it ask for administrator?
-The Riot Client (with Vanguard) often runs elevated, and a non-elevated app can't close it. RiotSwitcher relaunches itself once with UAC so switching can stop Riot cleanly. If you decline, the app still opens but switching will fail.
+The Riot Client (with Vanguard) often runs elevated, and a non-elevated app can't close it. Alt Hop relaunches itself once with UAC so switching can stop Riot cleanly. If you decline, the app still opens but switching will fail.
 
 ### An account says "Session expired". What now?
 Riot sessions eventually expire or get revoked (password change, "log out of all devices", long inactivity). Switch to that account, sign in again with *Stay signed in*, then click the **Recapture** (↻) button on its card.
@@ -122,8 +122,8 @@ Open the configs panel while switched into that account and click **Revert** —
 ### Does it work on macOS or Linux?
 No. It's Windows-only, like Valorant.
 
-### Is RiotSwitcher affiliated with Riot Games?
-No. Riot Account Switcher isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, Valorant and League of Legends are trademarks or registered trademarks of Riot Games, Inc.
+### Is Alt Hop affiliated with Riot Games?
+No. Alt Hop isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, Valorant and League of Legends are trademarks or registered trademarks of Riot Games, Inc.
 
 ## Building from source
 

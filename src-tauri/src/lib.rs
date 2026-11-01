@@ -1,4 +1,4 @@
-// Riot Account Switcher — backend. Session-file swap, no stored passwords, no
+// Alt Hop — backend. Session-file swap, no stored passwords, no
 // reverse engineering of the login protocol. See the project README.
 use serde::{Deserialize, Serialize};
 use std::fs;
@@ -24,7 +24,7 @@ fn programdata() -> PathBuf {
 }
 fn riot_data() -> PathBuf { local().join("Riot Games").join("Riot Client").join("Data") }
 fn session_file() -> PathBuf { riot_data().join("RiotGamesPrivateSettings.yaml") }
-fn app_dir() -> PathBuf { local().join("RiotSwitcher") }
+fn app_dir() -> PathBuf { local().join("AltHop") }
 fn sessions_dir() -> PathBuf { app_dir().join("sessions") }
 fn accounts_file() -> PathBuf { app_dir().join("accounts.json") }
 fn settings_file() -> PathBuf { app_dir().join("settings.json") }
@@ -331,6 +331,9 @@ fn ensure_elevated() {
 pub fn run() {
     #[cfg(windows)]
     ensure_elevated();
+    // 0.1.x stored its data as RiotSwitcher; carry it over once.
+    let old = local().join("RiotSwitcher");
+    if !app_dir().exists() && old.exists() { let _ = fs::rename(old, app_dir()); }
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             list_accounts, save_accounts, get_settings, save_settings,
