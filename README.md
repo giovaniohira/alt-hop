@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src-tauri/icons/128x128@2x.png" width="96" alt="" />
+<img src="src-tauri/icons/icon.svg" width="96" alt="" />
 
 # Riot Account Switcher
 
