@@ -27,7 +27,7 @@ No passwords stored, no login automation, no game memory touched.
 - **Auto-detected identity** — Riot ID, region and whether 2FA was used are read from the session token itself. No API calls.
 - **Session health** — accounts whose saved session is no longer valid get a *Session expired* badge; one click recaptures it.
 - **Game config sync** — save your main account's Valorant/League settings (keybinds, crosshair, graphics) and copy them onto any alt, with a per-account backup so you can revert.
-- **Tiny and native** — built with [Tauri 2](https://tauri.app) and plain HTML/CSS/JS. A few MB installer, no Electron.
+- **Tiny and native** — built with [Tauri 2](https://tauri.app) and plain HTML/CSS/JS. ~1.4 MB installer, no Electron.
 
 <table>
   <tr>
