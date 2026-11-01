@@ -19,8 +19,6 @@ No passwords stored, no login automation, no game memory touched.
 
 </div>
 
-> Screenshots use a fake backend with made-up accounts (see [`demo/`](demo)).
-
 ## Features
 
 - **One-click switch** — closes Riot, swaps the saved session in and reopens Valorant, League or the Riot Client.
@@ -143,22 +141,11 @@ Run the tests:
 cargo test --manifest-path src-tauri/Cargo.toml
 ```
 
-### UI demo with a fake backend
-
-To work on the UI (or take screenshots) without touching real Riot data:
-
-```bash
-npm run demo
-```
-
-Then open http://localhost:5174. It serves the real `src/` frontend with [`demo/mock.js`](demo/mock.js) standing in for the Rust backend, filled with fictional accounts. Append `#add`, `#configs`, `#switching`, `#remove` or `#empty` to the URL to open a specific view.
-
 ## Project layout
 
 ```
 src/              frontend (vanilla HTML/CSS/JS)
 src-tauri/src/    Rust backend: session swap, config sync, JWT identity parsing
-demo/             fake backend + static server for UI demos
 docs/screenshots/ README images
 ```
 
